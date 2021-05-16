@@ -14,7 +14,7 @@ public class DisplayAddTask extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_display_add_task);
 
-        Toast toast = Toast.makeText(getApplicationContext(), "The text you want to display", Toast.LENGTH_LONG);
+        Toast toast = Toast.makeText(getApplicationContext(), "submitted!", Toast.LENGTH_LONG);
 
         Button bt = (Button) findViewById(R.id.button);
 
