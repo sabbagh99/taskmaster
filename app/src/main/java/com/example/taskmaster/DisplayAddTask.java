@@ -22,7 +22,6 @@ public class DisplayAddTask extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 toast.show();
-//                bt.setText(Integer.toString());
             }
         });
 
