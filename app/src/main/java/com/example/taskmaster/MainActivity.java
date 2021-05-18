@@ -1,6 +1,9 @@
 package com.example.taskmaster;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.DefaultItemAnimator;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,6 +11,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import static android.provider.AlarmClock.EXTRA_MESSAGE;
 
@@ -30,8 +36,28 @@ public class MainActivity extends AppCompatActivity {
 //                startActivity(titleIntent);
 //            }
 //        });
+        List<TaskModel> listData = new ArrayList<>();
+        TaskModel task1 = new TaskModel("1","1","1");
+        TaskModel task2 = new TaskModel("2","2","2");
+        TaskModel task3 = new TaskModel("3","3","3");
 
-        Intent intent = getIntent();
+
+        listData.add(task1);
+        listData.add(task2);
+        listData.add(task3);
+
+
+
+        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
+        MyAdapter adapter = new MyAdapter(listData);
+        RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());
+        recyclerView.setLayoutManager(mLayoutManager);
+        recyclerView.setItemAnimator(new DefaultItemAnimator());
+        recyclerView.setAdapter(adapter);
+
+        adapter.notifyDataSetChanged();
+
+    Intent intent = getIntent();
         String userName = intent.getStringExtra("userName");
 
         TextView textView = findViewById(R.id.user);
