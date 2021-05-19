@@ -36,6 +36,9 @@
         android:id="@+id/allTask"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+
+        android:layout_marginTop="468dp"
+        android:layout_marginEnd="136dp"
         android:onClick="displayAllTask"
         android:text="All task"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -63,11 +66,72 @@
         android:layout_width="269dp"
         android:layout_height="263dp"
         app:layout_constraintBottom_toBottomOf="parent"
+    <Button
+        android:id="@+id/task1"
+        android:layout_width="256dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="70dp"
+        android:layout_marginTop="172dp"
+        android:onClick="displayTitle"
+        android:text="Finish 401"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/Task2"
+        android:layout_width="256dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="68dp"
+        android:layout_marginTop="248dp"
+        android:onClick="displayTitle"
+        android:text="take a nap after 5pm"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/Task3"
+        android:layout_width="256dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="68dp"
+        android:layout_marginTop="328dp"
+        android:onClick="displayTitle"
+        android:text="finish your home work"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/setting"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="276dp"
+        android:layout_marginTop="468dp"
+        android:onClick="displaySetting"
+        android:text="Settings"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/user"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="74dp"
+        android:layout_marginTop="139dp"
+        android:text="TextView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="352dp"
+        android:layout_height="240dp"
+        android:layout_marginTop="528dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.263"
         app:srcCompat="@drawable/ic_launcher_background" />
+
+        android:id="@+id/recyclerView"
+
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
