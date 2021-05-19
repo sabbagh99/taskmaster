@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.room.Room;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -36,20 +37,28 @@ public class MainActivity extends AppCompatActivity {
 //                startActivity(titleIntent);
 //            }
 //        });
-        List<TaskModel> listData = new ArrayList<>();
-        TaskModel task1 = new TaskModel("1","1","1");
-        TaskModel task2 = new TaskModel("2","2","2");
-        TaskModel task3 = new TaskModel("3","3","3");
 
 
-        listData.add(task1);
-        listData.add(task2);
-        listData.add(task3);
+        AppDataBase db = Room.databaseBuilder(getApplicationContext(),
+                AppDataBase.class, "task_master").allowMainThreadQueries().build();
+
+        TaskModelReposotery taskDao = db.taskDao();
+        List<TaskModel> tasks = taskDao.getAll();
+
+//        List<TaskModel> listData = new ArrayList<>();
+//        TaskModel task1 = new TaskModel("task1","task1","task1");
+//        TaskModel task2 = new TaskModel("task2","task2","task2");
+//        TaskModel task3 = new TaskModel("task3","task3","task3");
+//
+//
+//        listData.add(task1);
+//        listData.add(task2);
+//        listData.add(task3);
 
 
 
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
-        MyAdapter adapter = new MyAdapter(listData);
+        MyAdapter adapter = new MyAdapter(tasks);
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());
         recyclerView.setLayoutManager(mLayoutManager);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
