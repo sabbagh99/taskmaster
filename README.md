@@ -6,5 +6,10 @@
 ## lab 27 
 ### In today lab we start dealing with sending values between pages and using  SharedPreferences to save values into it. 
 ### And here is the home page and the task page for our application 
-![home page](./screenshots/Screenshot_1621255971.png)
+
+## lab 28
+
+## Today we learned how to use recycler view  by creating adapter class and fragment and know how to implement it
+## it's very good thing to use because  it will help you to save time for creating new class for each new page 
+![home page](./screenshots/Screenshot_1621626130.png)
 ![Task page](./screenshots/Screenshot_1621255138.png)
