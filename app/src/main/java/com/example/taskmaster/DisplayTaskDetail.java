@@ -16,9 +16,13 @@ public class DisplayTaskDetail extends AppCompatActivity {
 
         Intent intent = getIntent();
         String title = intent.getStringExtra("title");
+        String disruption = intent.getStringExtra("disruption");
+
 
         // Capture the layout's TextView and set the string as its text
         TextView titleView = findViewById(R.id.taskDetailTitle);
         titleView.setText(title);
+        TextView disruptionView = findViewById(R.id.textView3);
+        disruptionView.setText(disruption);
     }
 }

@@ -56,12 +56,15 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
 
         TextView titleFrag =  holder.itemView.findViewById(R.id.titleFrag);
         String title = titleFrag.getText().toString();
+        TextView disruptionFrag = holder.itemView.findViewById(R.id.bodyFrag);
+        String disruption = disruptionFrag.getText().toString();
         holder.itemView.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View view) {
                 Intent titleIntent = new Intent(view.getContext(), DisplayTaskDetail.class);
                 titleIntent.putExtra("title",title );
+                titleIntent.putExtra("disruption",disruption );
                 view.getContext().startActivity(titleIntent);
             }
         });
