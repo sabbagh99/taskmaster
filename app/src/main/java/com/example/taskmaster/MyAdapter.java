@@ -1,9 +1,12 @@
 package com.example.taskmaster;
 
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -17,14 +20,13 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
     public List<TaskModel> listData;
 
 
-public  MyAdapter(List<TaskModel> listData){
-    this.listData=listData;
-}
+    public MyAdapter(List<TaskModel> listData) {
+        this.listData = listData;
+    }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
 
         public TextView title, body, state;
-
 
 
         public ViewHolder(View itemView) {
@@ -38,21 +40,31 @@ public  MyAdapter(List<TaskModel> listData){
 
 
     @Override
-    public ViewHolder onCreateViewHolder( ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.fragment_task,parent,false);
+    public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.fragment_task, parent, false);
         ViewHolder viewHolder = new ViewHolder(view);
         return viewHolder;
 
     }
 
     @Override
-    public void onBindViewHolder( ViewHolder holder, int position) {
+    public void onBindViewHolder(ViewHolder holder, int position) {
 
-         TaskModel task = listData.get(position);
         holder.title.setText(listData.get(position).getTitle());
         holder.body.setText(listData.get(position).getBody());
         holder.state.setText(listData.get(position).getState());
 
+        TextView titleFrag =  holder.itemView.findViewById(R.id.titleFrag);
+        String title = titleFrag.getText().toString();
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view) {
+                Intent titleIntent = new Intent(view.getContext(), DisplayTaskDetail.class);
+                titleIntent.putExtra("title",title );
+                view.getContext().startActivity(titleIntent);
+            }
+        });
 
     }
 
