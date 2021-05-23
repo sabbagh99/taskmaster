@@ -17,4 +17,7 @@ public interface TaskModelReposotery {
     @Query("SELECT * FROM task_model")
     List<TaskModel> getAll();
 
+    @Query("DELETE FROM task_model")
+    public void nukeTable();
+
 }

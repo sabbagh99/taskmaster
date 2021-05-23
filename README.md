@@ -15,5 +15,13 @@
 ## lab 29 
 ### For today we start using Room in our application and you need to know how to use it because it's necessary  thing to use in your application so what we did is save data into database and show it in other page after we get it from the database
 
-![home page](./screenshots/Screenshot_1621626130.png)
-![Task page](./screenshots/Screenshot_1621255138.png)
+#### This is the home page we can see the tasks and you can move from it to the other pages using the showed buttons
+![home page](./screenshots/Screenshot_1621792046.png)
+#### In this page we can add tasks by filling the form as shown. 
+![Add Task page](./screenshots/Screenshot_1621792151.png)
+#### This page will contain the detail for a specific task.
+![task detail](./screenshots/Screenshot_1621792075.png)
+#### Here you can see all tasks that you add it in the add task page and you can move between tasks by scrolling to the left
+![All task ](./screenshots/Screenshot_1621792172.png)
+#### in the setting page you can add you user name and it will appear in the home page 
+![setting](./screenshots/Screenshot_1621792188.png)

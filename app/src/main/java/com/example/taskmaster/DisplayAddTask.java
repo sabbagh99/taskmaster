@@ -35,7 +35,8 @@ public class DisplayAddTask extends AppCompatActivity {
 
                 EditText title = findViewById(R.id.taskTitle);
                 EditText description = findViewById(R.id.taskdesc);
-                TaskModel task = new TaskModel(title.getText().toString(),description.getText().toString(),"in Progress");
+                EditText status = findViewById(R.id.status);
+                TaskModel task = new TaskModel(title.getText().toString(),description.getText().toString(),status.getText().toString());
                 taskDao.insertAll(task);
                 Log.d("taskssss", "onClick: "+task);
             }

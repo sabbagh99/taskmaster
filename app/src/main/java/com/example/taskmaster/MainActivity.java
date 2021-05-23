@@ -8,6 +8,7 @@ import androidx.room.Room;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -24,20 +25,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        AppDataBase db = Room.databaseBuilder(getApplicationContext(),
-                AppDataBase.class, "task_master").allowMainThreadQueries().build();
 
-        TaskModelReposotery taskDao = db.taskDao();
-        List<TaskModel> tasks = taskDao.getAll();
-
-        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
-        MyAdapter adapter = new MyAdapter(tasks);
-        RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());
-        recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, true));
-        recyclerView.setItemAnimator(new DefaultItemAnimator());
-        recyclerView.setAdapter(adapter);
-
-        adapter.notifyDataSetChanged();
 
 
         Intent intent = getIntent();
@@ -74,23 +62,5 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    @Override
-    protected void onResume() {
-        super.onResume();
 
-        AppDataBase db = Room.databaseBuilder(getApplicationContext(),
-                AppDataBase.class, "task_master").allowMainThreadQueries().build();
-
-        TaskModelReposotery taskDao = db.taskDao();
-        List<TaskModel> tasks = taskDao.getAll();
-
-        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
-        MyAdapter adapter = new MyAdapter(tasks);
-        RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());
-        recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, true));
-        recyclerView.setItemAnimator(new DefaultItemAnimator());
-        recyclerView.setAdapter(adapter);
-
-        adapter.notifyDataSetChanged();
-    }
 }
