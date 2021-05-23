@@ -58,6 +58,8 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
         String title = titleFrag.getText().toString();
         TextView disruptionFrag = holder.itemView.findViewById(R.id.bodyFrag);
         String disruption = disruptionFrag.getText().toString();
+        TextView statusFrag = holder.itemView.findViewById(R.id.stateFrag);
+        String status = statusFrag.getText().toString();
         holder.itemView.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -65,6 +67,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
                 Intent titleIntent = new Intent(view.getContext(), DisplayTaskDetail.class);
                 titleIntent.putExtra("title",title );
                 titleIntent.putExtra("disruption",disruption );
+                titleIntent.putExtra("status",status);
                 view.getContext().startActivity(titleIntent);
             }
         });

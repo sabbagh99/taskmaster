@@ -33,6 +33,7 @@ public class TaskFragment extends Fragment {
      *
      * @param mTitle Parameter 1.
      * @param mBody Parameter 2.
+     * @param mState Parameter 3.
      * @return A new instance of fragment TaskFragment.
      */
     // TODO: Rename and change types and number of parameters
@@ -56,7 +57,7 @@ public class TaskFragment extends Fragment {
         if (getArguments() != null) {
             mTitle = getArguments().getString(ARG_PARAM1);
             mBody = getArguments().getString(ARG_PARAM2);
-            mState = getArguments().getString(ARG_PARAM2);
+            mState = getArguments().getString(ARG_PARAM3);
 
         }
     }
