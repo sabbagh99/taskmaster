@@ -118,14 +118,5 @@
         android:layout_marginTop="120dp"
         android:text="TextView"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" /><![CDATA[
-
-
-
-    android:id="@+id/recyclerView"
-
-    />
-
-
-]]>
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

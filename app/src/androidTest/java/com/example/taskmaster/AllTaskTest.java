@@ -59,5 +59,14 @@ public class AllTaskTest {
 
     }
 
+    @Test
+    public  void  testTappingOnTask(){
+//  tap on a task, and assert that the resulting activity displays the name of that task
+
+        onView(withId(R.id.recyclerView)).perform(click());
+
+        onView(withText("My task 1")).check(matches(isDisplayed()));
+    }
+
 
 }
