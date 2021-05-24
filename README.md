@@ -15,7 +15,11 @@
 ## lab 29 
 ### For today we start using Room in our application and you need to know how to use it because it's necessary  thing to use in your application so what we did is save data into database and show it in other page after we get it from the database
 
+## lab 31
+### Today we start using Espresso testing to test our application there to many type of testing what we acutely used is sending the id for a view and and check if this id working well by check if we can click on it if it a button or if we can write a text if it a form
+
 #### This is the home page we can see the tasks and you can move from it to the other pages using the showed buttons
+
 ![home page](./screenshots/Screenshot_1621792046.png)
 #### In this page we can add tasks by filling the form as shown. 
 ![Add Task page](./screenshots/Screenshot_1621792151.png)
