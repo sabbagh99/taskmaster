@@ -47,7 +47,7 @@ public class AllTaskTest {
 //        check if the  recyclerView can swipe to left and if there is a view displayed
 
 
-        onView(withText("My task 1")).perform(ViewActions.swipeLeft()).check(ViewAssertions.matches(isDisplayed()));
+        onView(withText("Build Android application")).perform(ViewActions.swipeLeft()).check(ViewAssertions.matches(isDisplayed()));
 //        swipe the recyclerView and check if it have My tasks 1 text
 
 
@@ -65,7 +65,7 @@ public class AllTaskTest {
 
         onView(withId(R.id.recyclerView)).perform(click());
 
-        onView(withText("My task 1")).check(matches(isDisplayed()));
+        onView(withText("Build Android application")).check(matches(isDisplayed()));
     }
 
 

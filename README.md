@@ -20,6 +20,12 @@
 
 #### This is the home page we can see the tasks and you can move from it to the other pages using the showed buttons
 
+
+## lab 32
+
+### what I did today is start using  AWS amplify to deal with database and models, so insted of using room for saving data on it we replace it with AWS amplify to save data and show it in the all task page .
+
+
 ![home page](./screenshots/Screenshot_1621792046.png)
 #### In this page we can add tasks by filling the form as shown. 
 ![Add Task page](./screenshots/Screenshot_1621792151.png)
