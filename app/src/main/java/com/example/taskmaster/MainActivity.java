@@ -14,6 +14,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.amplifyframework.AmplifyException;
+import com.amplifyframework.core.Amplify;
+import com.amplifyframework.datastore.AWSDataStorePlugin;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -33,6 +37,16 @@ public class MainActivity extends AppCompatActivity {
 
         TextView textView = findViewById(R.id.user);
         textView.setText(userName);
+
+//        initialize Amplify
+        try {
+            Amplify.addPlugin(new AWSDataStorePlugin());
+            Amplify.configure(getApplicationContext());
+
+            Log.i("Tutorial", "Initialized Amplify");
+        } catch (AmplifyException e) {
+            Log.e("Tutorial", "Could not initialize Amplify", e);
+        }
     }
 
     public void displayTitle(View view) {
