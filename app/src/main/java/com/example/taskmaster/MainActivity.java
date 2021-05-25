@@ -17,6 +17,7 @@ import android.widget.TextView;
 import com.amplifyframework.AmplifyException;
 import com.amplifyframework.core.Amplify;
 import com.amplifyframework.datastore.AWSDataStorePlugin;
+import com.amplifyframework.datastore.generated.model.Task;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -39,14 +40,36 @@ public class MainActivity extends AppCompatActivity {
         textView.setText(userName);
 
 //        initialize Amplify
-        try {
-            Amplify.addPlugin(new AWSDataStorePlugin());
-            Amplify.configure(getApplicationContext());
+//        try {
+//            Amplify.addPlugin(new AWSDataStorePlugin());
+//            Amplify.configure(getApplicationContext());
+//
+//            Log.i("Tutorial", "Initialized Amplify");
+//        } catch (AmplifyException e) {
+//            Log.e("Tutorial", "Could not initialize Amplify", e);
+//        }
 
-            Log.i("Tutorial", "Initialized Amplify");
-        } catch (AmplifyException e) {
-            Log.e("Tutorial", "Could not initialize Amplify", e);
-        }
+
+//        Amplify.DataStore.query(Task.class,
+//                todos -> {
+//                    while (todos.hasNext()) {
+//                        Task todo = todos.next();
+//
+//                        Log.i("Tutorial", "==== Todo ====");
+//                        Log.i("Tutorial", "Title: " + todo.getTitle());
+//
+//                        if (todo.getStatus() != null) {
+//                            Log.i("Tutorial", "status: " + todo.getStatus());
+//                        }
+//
+//                        if (todo.getDescription() != null) {
+//                            Log.i("Tutorial", "Description: " + todo.getDescription());
+//                        }
+//                    }
+//                },
+//                failure -> Log.e("Tutorial", "Could not query DataStore", failure)
+//        );
+
     }
 
     public void displayTitle(View view) {
