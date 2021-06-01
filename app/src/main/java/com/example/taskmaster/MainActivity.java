@@ -15,6 +15,10 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.amplifyframework.AmplifyException;
+import com.amplifyframework.auth.AuthUserAttributeKey;
+import com.amplifyframework.auth.cognito.AWSCognitoAuthPlugin;
+import com.amplifyframework.auth.options.AuthSignOutOptions;
+import com.amplifyframework.auth.options.AuthSignUpOptions;
 import com.amplifyframework.core.Amplify;
 import com.amplifyframework.datastore.AWSDataStorePlugin;
 import com.amplifyframework.datastore.generated.model.Task;
@@ -34,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         Intent intent = getIntent();
-        String userName = intent.getStringExtra("userName");
+        String userName = intent.getStringExtra("userName1");
 
         TextView textView = findViewById(R.id.user);
         textView.setText(userName);
@@ -70,6 +74,65 @@ public class MainActivity extends AppCompatActivity {
 //                failure -> Log.e("Tutorial", "Could not query DataStore", failure)
 //        );
 
+//====================================
+
+        try {
+            Amplify.addPlugin(new AWSCognitoAuthPlugin());
+            Amplify.configure(getApplicationContext());
+
+            Log.i("Tutorial", "Initialized Amplify");
+        } catch (AmplifyException e) {
+            Log.e("Tutorial", "Could not initialize Amplify", e);
+        }
+
+
+//        AuthSignUpOptions options = AuthSignUpOptions.builder()
+//                .userAttribute(AuthUserAttributeKey.email(), "a.sameer1999@gmail.com")
+//                .build();
+//        Amplify.Auth.signUp("sabbagh", "Password123", options,
+//                result -> Log.i("AuthQuickStart", "Result: " + result.toString()),
+//                error -> Log.e("AuthQuickStart", "Sign up failed", error)
+//        );
+
+//        Amplify.Auth.confirmSignUp(
+//                "sabbagh",
+//                "850679",
+//                result -> Log.i("AuthQuickstart", result.isSignUpComplete() ? "Confirm signUp succeeded" : "Confirm sign up not complete"),
+//                error -> Log.e("AuthQuickstart", error.toString())
+//        );
+//
+//
+//        Amplify.Auth.signIn(
+//                "sabbagh",
+//                "Password123",
+//                result -> Log.i("AuthQuickstart", result.isSignInComplete() ? "Sign in succeeded" : "Sign in not complete"),
+//                error -> Log.e("AuthQuickstart", error.toString())
+//        );
+//        Amplify.Auth.fetchAuthSession(
+//                result -> Log.i("AmplifyQuickstart", result.toString()),
+//                error -> Log.e("AmplifyQuickstart", error.toString())
+//        );
+
+
+        findViewById(R.id.logoutButton).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Amplify.Auth.signOut(
+                        () -> Log.i("AuthQuickstart", "Signed out successfully"),
+                        error -> Log.e("AuthQuickstart", error.toString())
+
+
+                );
+
+
+                Amplify.Auth.signOut(
+                        AuthSignOutOptions.builder().globalSignOut(true).build(),
+                        () -> Log.i("AuthQuickstart", "Signed out globally"),
+                        error -> Log.e("AuthQuickstart", error.toString())
+                );
+            }
+        });
+
     }
 
     public void displayTitle(View view) {
@@ -95,6 +158,19 @@ public class MainActivity extends AppCompatActivity {
 
     public void displaySetting(View view) {
         Intent intent = new Intent(this, DisplaySettingsPage.class);
+        startActivity(intent);
+
+    }
+
+
+    public void displaySignUpPage(View view) {
+        Intent intent = new Intent(this, SignupPage.class);
+        startActivity(intent);
+
+    }
+
+    public void displayLogInPage(View view) {
+        Intent intent = new Intent(this, LogInPage.class);
         startActivity(intent);
 
     }

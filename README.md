@@ -26,6 +26,13 @@
 ### what I did today is start using  AWS amplify to deal with database and models, so insted of using room for saving data on it we replace it with AWS amplify to save data and show it in the all task page .
 
 
+
+## lab 36
+
+###  Today I start dealing with authorization using Cognito so now the task master project you can use it by sign up as a user and log in also 
+### In order to do that you need to join sign up page fill your information then you will receive an confirmation code in you email  you need to write it in the required field 
+### now you can login using your user name and your password
+
 ![home page](./screenshots/Screenshot_1621792046.png)
 #### In this page we can add tasks by filling the form as shown. 
 ![Add Task page](./screenshots/Screenshot_1621792151.png)
@@ -35,3 +42,4 @@
 ![All task ](./screenshots/Screenshot_1621792172.png)
 #### in the setting page you can add you user name and it will appear in the home page 
 ![setting](./screenshots/Screenshot_1621792188.png)
+

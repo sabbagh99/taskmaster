@@ -9,38 +9,40 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Taskmaster">
+        <activity android:name=".confirmSignUpPage"></activity>
+        <activity android:name=".LogInPage" />
+        <activity android:name=".SignupPage" />
         <activity
             android:name=".DisplaySettingsPage"
-            android:parentActivityName=".MainActivity"
             android:label="Settings"
-            >
+            android:parentActivityName=".MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity"
-                />
+                android:value=".MainActivity" />
         </activity>
         <activity
             android:name=".DisplayTaskDetail"
-            android:parentActivityName=".MainActivity"
-            android:label ="TaskDetail">
+            android:label="TaskDetail"
+            android:parentActivityName=".MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MainActivity" />
         </activity>
         <activity
             android:name=".DisplayAddTask"
-            android:parentActivityName=".MainActivity"
             android:label="AddTask"
-            >
+            android:parentActivityName=".MainActivity">
+
             <!-- The meta-data tag is required if you support API level 15 and lower -->
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MainActivity" />
         </activity>
-        <activity android:name=".DisplayAllTask"
-            android:parentActivityName=".MainActivity"
+        <activity
+            android:name=".DisplayAllTask"
             android:label="AllTask"
-            >
+            android:parentActivityName=".MainActivity">
+
             <!-- The meta-data tag is required if you support API level 15 and lower -->
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
