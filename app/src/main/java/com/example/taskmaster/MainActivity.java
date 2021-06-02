@@ -22,6 +22,7 @@ import com.amplifyframework.auth.options.AuthSignUpOptions;
 import com.amplifyframework.core.Amplify;
 import com.amplifyframework.datastore.AWSDataStorePlugin;
 import com.amplifyframework.datastore.generated.model.Task;
+import com.amplifyframework.storage.s3.AWSS3StoragePlugin;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -36,7 +37,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 
-
         Intent intent = getIntent();
         String userName = intent.getStringExtra("userName1");
 
@@ -44,14 +44,17 @@ public class MainActivity extends AppCompatActivity {
         textView.setText(userName);
 
 //        initialize Amplify
-//        try {
-//            Amplify.addPlugin(new AWSDataStorePlugin());
-//            Amplify.configure(getApplicationContext());
-//
-//            Log.i("Tutorial", "Initialized Amplify");
-//        } catch (AmplifyException e) {
-//            Log.e("Tutorial", "Could not initialize Amplify", e);
-//        }
+        try {
+            Amplify.addPlugin(new AWSDataStorePlugin());
+            Amplify.addPlugin(new AWSCognitoAuthPlugin());
+            Amplify.addPlugin(new AWSS3StoragePlugin());
+
+            Amplify.configure(getApplicationContext());
+
+            Log.i("Tutorial", "Initialized Amplify");
+        } catch (AmplifyException e) {
+            Log.e("Tutorial", "Could not initialize Amplify", e);
+        }
 
 
 //        Amplify.DataStore.query(Task.class,
@@ -75,15 +78,16 @@ public class MainActivity extends AppCompatActivity {
 //        );
 
 //====================================
-
-        try {
-            Amplify.addPlugin(new AWSCognitoAuthPlugin());
-            Amplify.configure(getApplicationContext());
-
-            Log.i("Tutorial", "Initialized Amplify");
-        } catch (AmplifyException e) {
-            Log.e("Tutorial", "Could not initialize Amplify", e);
-        }
+//
+//        try {
+//            Amplify.addPlugin(new AWSDataStorePlugin());
+//            Amplify.addPlugin(new AWSCognitoAuthPlugin());
+//            Amplify.configure(getApplicationContext());
+//
+//            Log.i("Tutorial", "Initialized Amplify");
+//        } catch (AmplifyException e) {
+//            Log.e("Tutorial", "Could not initialize Amplify", e);
+//        }
 
 
 //        AuthSignUpOptions options = AuthSignUpOptions.builder()

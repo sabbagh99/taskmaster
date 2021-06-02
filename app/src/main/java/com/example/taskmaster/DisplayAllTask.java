@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.util.Log;
 
 import com.amplifyframework.AmplifyException;
+import com.amplifyframework.auth.cognito.AWSCognitoAuthPlugin;
 import com.amplifyframework.core.Amplify;
 import com.amplifyframework.datastore.AWSDataStorePlugin;
 import com.amplifyframework.datastore.generated.model.Task;
@@ -39,14 +40,15 @@ public class DisplayAllTask extends AppCompatActivity {
 //        ========================== AWS database ==================
 
 //        initialize Amplify
-        try {
-            Amplify.addPlugin(new AWSDataStorePlugin());
-            Amplify.configure(getApplicationContext());
-
-            Log.i("Tutorial", "Initialized Amplify");
-        } catch (AmplifyException e) {
-            Log.e("Tutorial", "Could not initialize Amplify", e);
-        }
+//        try {
+//            Amplify.addPlugin(new AWSDataStorePlugin());
+//            Amplify.addPlugin(new AWSCognitoAuthPlugin());
+//            Amplify.configure(getApplicationContext());
+//
+//            Log.i("Tutorial", "Initialized Amplify");
+//        } catch (AmplifyException e) {
+//            Log.e("Tutorial", "Could not initialize Amplify", e);
+//        }
        List<TaskModel> allTask = new ArrayList<TaskModel>();
 
         Amplify.DataStore.query(Task.class,
@@ -113,14 +115,16 @@ public class DisplayAllTask extends AppCompatActivity {
 //        ========================== AWS database ==================
 
 //        initialize Amplify
-        try {
-            Amplify.addPlugin(new AWSDataStorePlugin());
-            Amplify.configure(getApplicationContext());
 
-            Log.i("Tutorial", "Initialized Amplify");
-        } catch (AmplifyException e) {
-            Log.e("Tutorial", "Could not initialize Amplify", e);
-        }
+
+//        try {
+//            Amplify.addPlugin(new AWSDataStorePlugin());
+//            Amplify.configure(getApplicationContext());
+//
+//            Log.i("Tutorial", "Initialized Amplify");
+//        } catch (AmplifyException e) {
+//            Log.e("Tutorial", "Could not initialize Amplify", e);
+//        }
         List<TaskModel> allTask = new ArrayList<TaskModel>();
 
         Amplify.DataStore.query(Task.class,
