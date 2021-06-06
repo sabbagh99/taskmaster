@@ -1,15 +1,14 @@
 {
   "auth": {
-    "taskmaster73e52734": {
+    "sabbaggtaskmasterf2c4a0bd": {
       "service": "Cognito",
       "providerPlugin": "awscloudformation",
       "dependsOn": [],
       "customAuth": false
     }
   },
-  "api": {},
   "storage": {
-    "friendlyName": {
+    "friendlyname": {
       "service": "S3",
       "providerPlugin": "awscloudformation"
     }

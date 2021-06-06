@@ -33,6 +33,13 @@
 ### In order to do that you need to join sign up page fill your information then you will receive an confirmation code in you email  you need to write it in the required field 
 ### now you can login using your user name and your password
 
+
+##lab 38 
+### Today in order to deal with notification we start using firebase to send notification from firebase to user by using FirebaseMessaging to get the massage and show it 
+[Notification](./screenshots/Screenshot_20210606-144318.png)
+
+ 
+
 ![home page](./screenshots/Screenshot_1621792046.png)
 #### In this page we can add tasks by filling the form as shown. 
 ![Add Task page](./screenshots/Screenshot_1621792151.png)
